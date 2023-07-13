@@ -128,6 +128,19 @@ module Ferrum
       end
 
       #
+      # Converts the exchange to a Hash.
+      #
+      # @return [Hash{Symbol => Object}]
+      #
+      def to_h
+        {
+          request: request,
+          response: response,
+          error: error
+        }
+      end
+
+      #
       # Inspects the network exchange.
       #
       # @return [String]

@@ -148,6 +148,20 @@ describe Ferrum::Network::Exchange do
     end
   end
 
+  describe "#to_h" do
+    it "must return a Hash containing the request, response, and error objects" do
+      page.go_to
+
+      expect(last_exchange.to_h).to eq(
+        {
+          request: last_exchange.request,
+          response: last_exchange.response,
+          error: last_exchange.error
+        }
+      )
+    end
+  end
+
   describe "#inspect" do
     it "returns string for debugging" do
       page.go_to
